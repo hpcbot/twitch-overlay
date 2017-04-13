@@ -1,0 +1,38 @@
+{
+  "name": "twitch-overlay",
+  "version": "0.0.1",
+  "description": "Overlay for Twitch streamers that can be loaded into OBS or XSplit",
+  "keywords": [
+    "twitch",
+    "obs",
+    "xsplit"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha './lib/*.spec.js'"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "author": "bdickason",
+  "contributors": [
+    {
+      "name": "bdickason",
+      "email": "dickason@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bdickason/twitch-overlay.git"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0"
+  },
+  "license":"GPL-3.0",
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*"
+  }
+}
