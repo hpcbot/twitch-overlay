@@ -27,12 +27,22 @@
     "url": "git://github.com/bdickason/twitch-overlay.git"
   },
   "dependencies": {
-    "dotenv": "4.0.0"
+    "express": "4.15.2",
+    "extend": "3.0.0",
+    "pug": "2.0.0-beta11",
+    "socket.io": "1.7.3"
   },
   "license":"GPL-3.0",
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "phantomjs": "*",
+    "casperjs": "*",
+    "gulp": "*",
+    "gulp-nodemon": "*",
+    "gulp-mocha": "*",
+    "gulp-casperjs-local": "*"
+
   }
 }
