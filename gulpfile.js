@@ -18,12 +18,12 @@ gulp.task('testclient', ['start', 'casper'], function() {
 
 gulp.task('watch', function() {
 	// Run server-side tests whenever a server-side test changes
-	gulp.watch(['lib/**/*.js', '!lib/**/*.test.js', '!lib/server/static/*.js'], ['mocha']);
+	gulp.watch(['lib/**/*.js', '!lib/**/*.test.js', '!lib/static/*.js'], ['mocha']);
 });
 
 gulp.task('watchclient', function() {
 	// Run client-side tests whenever a client-side test changes
-	gulp.watch(['!lib/**/*.js', 'lib/**/*.test.js', 'lib/server/static/*.js'], ['start', 'casper']);
+	gulp.watch(['!lib/**/*.js', 'lib/**/*.test.js', 'lib/static/*.js'], ['start', 'casper']);
 });
 
 gulp.task('mocha', function() {
@@ -38,14 +38,16 @@ gulp.task('casper', function() {
 	return gulp
 		.src(['lib/**/*.test.js'])
 		.pipe(casper({
-			verbose: true
-		})); 
+			verbose: true,
+			logLevel: "debug"
+		}));
 });
 
 /* Launch the app or parts of it */
 gulp.task('start', function() {
-  // Start the app
-  nodemon({
-  	script: 'index.js'
-  });
+	nodemon({
+		script: 'index.js',
+		ext: '.js',
+		ignore: ['*.spec.js', '*.test.js']
+	});
 });
