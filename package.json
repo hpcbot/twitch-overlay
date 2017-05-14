@@ -1,6 +1,6 @@
 {
   "name": "twitch-overlay",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Overlay for Twitch streamers that can be loaded into OBS or XSplit",
   "keywords": [
     "twitch",
