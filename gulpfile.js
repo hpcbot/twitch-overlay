@@ -46,7 +46,7 @@ gulp.task('casper', function() {
 /* Launch the app or parts of it */
 gulp.task('start', function() {
 	nodemon({
-		script: 'index.js',
+		script: 'test.js',
 		ext: '.js',
 		ignore: ['*.spec.js', '*.test.js']
 	});
