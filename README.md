@@ -1,5 +1,5 @@
-# hpc-bot
-Twitch bot for the Harry Potter Clan
+# twitch-overlay
+Animated overlays for Twitch streamers that can be loaded into OBS or XSplit
 
 # Usage
 
@@ -7,36 +7,28 @@ Twitch bot for the Harry Potter Clan
 `!sortinghat` - Place the sorting hat on your head and find out what House you belong to
 `!rules` - 
 
-
-# Contributing
-## Changing what the bot says (Strings)
-
-You can locate all of the strings the bot uses in `config/strings.json`: https://github.com/bdickason/hpc-bot/blob/master/config/strings.json
-
-You can edit the format here there, just make sure you copy/paste the resulting file here to test it: http://jsonlint.com/
-
-# Setup
-
 ## Installation
 
-1. Download NodeJS: https://nodejs.org/en/
-1. Install packages: `npm install`
-1. Run the bot: `node app.js`
+1. Include the module in your codebase: `var Overlays = require('twitch-overlay');`
+1. Define any optional settings `var options = {};` (see **Config** below)
+1. Start the overlay server: `Overlays.start(options);`
 
 ## Config
-Create a file in your root project directory named `.env` *(this file will be automagically .gitignore'd)*
 
-Set the following environment variables:
-````
-HPC_USERNAME
-HPC_PASSWORD
-HPC_CHANNEL
-````
+    var options = {
+        hostname: 'localhost',                      // Binds server to this host (optional)
+        port: 3000,                                 // Binds server to this port
+        directory: '/',                             // URL you want to point OBS/Xsplit at (optional, default: '/')
+        viewEngine: 'pug',                          // Templating system you'd like to use (Express-compatible) (optional: defaults to pug) */
+        events: new Events.EventEmitter()           // Listens to events to trigger overlays
+    };
 
-## Running the App
+## Adding Overlays
+See an example here: https://github.com/bdickason/hpc-bot
 
-To run the app, execute `npm start` from your project root.
-
+## Modules
+* [text](https://github.com/bdickason/twitch-overlay-text) - Text-to-Speech overlay to say anything aloud on your stream
+* [video](https://github.com/bdickason/twitch-overlay-video) - Video overlay to play a video clip on your stream
 
 ## Running Tests
 
