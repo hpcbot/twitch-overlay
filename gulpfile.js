@@ -7,7 +7,7 @@ var casper = require('gulp-casperjs-local').default;
 /* Tests */
 gulp.task('test', ['mocha'], function() {
 	// Run all tests
-	gulp.run('testclient');
+	// gulp.run('testclient');
 	// process.exit(1);
 });
 
@@ -30,7 +30,7 @@ gulp.task('mocha', function() {
 	// Run server-side tests once
 	return gulp
 		.src(['lib/**/*.spec.js'])
-		.pipe(mocha());
+		.pipe(mocha({ exit: true }));
 });
 
 gulp.task('casper', function() {
