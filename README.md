@@ -5,11 +5,11 @@ Animated overlays for Twitch streamers that can be loaded into OBS or XSplit
 
 ## Commands
 `!sortinghat` - Place the sorting hat on your head and find out what House you belong to
-`!rules` - 
+`!rules` -
 
 ## Installation
 
-1. Include the module in your codebase: `var Overlays = require('twitch-overlay');`
+1. Include the module in your codebase: `var overlays = require('twitch-overlay');`
 1. Define any optional settings `var options = {};` (see **Config** below)
 1. Start the overlay server: `Overlays.start(options);`
 
@@ -35,5 +35,3 @@ See an example here: https://github.com/bdickason/hpc-bot
 You can run tests to verify that everything is working with the command `npm test`. This requires **mocha** to be installed with `npm install -g mocha`.
 
 If you plan to submit pull requests, please ensure that the request includes proper test coverage of your feature.
-
-
