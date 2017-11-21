@@ -30,7 +30,10 @@
     "express": "4.15.2",
     "extend": "3.0.0",
     "pug": "2.0.0-beta11",
-    "socket.io": "1.7.3"
+    "socket.io": "1.7.3",
+    "twitch-overlay-text": "1.0.0",
+    "twitch-overlay-video": "1.0.0",
+    "twitch-overlay-html": "1.0.0"
   },
   "license":"GPL-3.0",
   "devDependencies": {
