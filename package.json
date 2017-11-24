@@ -35,7 +35,7 @@
     "twitch-overlay-video": "1.0.0",
     "twitch-overlay-html": "1.0.0"
   },
-  "license":"GPL-3.0",
+  "license": "GPL-3.0",
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
