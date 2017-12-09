@@ -25,7 +25,7 @@ class OverlayPlayer extends React.Component {
 
   render () {
     return(
-      <div>{this.state}</div>
+      <div>Test!</div>
     );
   }
 
