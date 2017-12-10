@@ -9,28 +9,49 @@ import openSocket from 'socket.io-client';
 const socket = openSocket(hostname + ':3000'); // Connect to the server to get client updates
 
 // Components
-// import css from './overlay-client.css'
+import Overlay from './overlay.jsx'
 
 class OverlayPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      overlays: []
     };
+    //
+    // let overlays = [];
+    // console.log(overlays)
 
     this.updateState = this.updateState.bind(this);
+    this.end = this.end.bind(this);
 
     /* Handle updates from server */
-    socket.on('state', this.updateState);   // Receive state updates from server
+    socket.on('overlays:state', this.updateState);    // Receive state updates from server
   }
 
   render () {
+    this.overlaylist = this.state.overlays.map((overlay, index) =>
+      <Overlay
+        key={overlay.id}
+        id={overlay.id}
+        name={overlay.name}
+        type={overlay.type}
+        video={overlay.video}
+        payload={overlay.payload}
+        end={this.end}
+      />
+    );
     return(
-      <div>Test!</div>
+      <div>{this.overlaylist}</div>
     );
   }
 
   updateState(state) {
     this.setState(state);
+    console.log(state);
+  }
+
+  end(id) {
+    socket.emit('endOverlay', id);
   }
 }
 
