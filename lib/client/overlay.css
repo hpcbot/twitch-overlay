@@ -3,3 +3,20 @@
 	max-width: 100%;
 	height: auto;
 }
+
+/* Custom harryp1 font */
+.text {
+	font-family: 'Harry P';
+	font-weight: normal;
+	font-style: normal;
+	font-size: -webkit-xxx-large;
+	color: yellow;
+}
+
+@font-face {
+    font-family: 'Harry P';
+    src: url('/css/HarryP.woff2') format('woff2'),
+        url('/css/HarryP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
