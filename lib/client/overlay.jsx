@@ -4,6 +4,9 @@ import {render} from 'react-dom';
 
 import css from './overlay.css'
 
+import VideoOverlay from './types/videooverlay.jsx'
+import TextOverlay from './types/textoverlay.jsx'
+
 class Overlay extends React.Component {
   constructor(props) {
     super(props);
@@ -12,23 +15,18 @@ class Overlay extends React.Component {
   }
 
   render () {
-    if(this.props.type == 'video') {
-      // Render video template
-      return(
-        <div className="video">
-          <center>
-		        <video className='responsive' onEnded={this.end} width='900' height='700' autoPlay>
-              <source src={this.props.video} type='video/mp4' />
-            </video>
-		      <br />
-        </center>
-        </div>
-      );
-    } else {
-      return(
-        <div>
-          {this.props.name}
-        </div>);
+    console.log(this.props.payload);
+    switch(this.props.type) {
+      case 'video':
+        return(
+          <VideoOverlay onEnd={this.end} video={this.props.payload.video} />
+        );
+        break;
+      case 'text':
+        return(
+          <TextOverlay onEnd={this.end} text={this.props.payload.text} />
+        );
+      break;
     }
   }
 

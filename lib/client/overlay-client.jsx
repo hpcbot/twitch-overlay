@@ -17,9 +17,6 @@ class OverlayPlayer extends React.Component {
     this.state = {
       overlays: []
     };
-    //
-    // let overlays = [];
-    // console.log(overlays)
 
     this.updateState = this.updateState.bind(this);
     this.end = this.end.bind(this);
@@ -35,7 +32,6 @@ class OverlayPlayer extends React.Component {
         id={overlay.id}
         name={overlay.name}
         type={overlay.type}
-        video={overlay.video}
         payload={overlay.payload}
         end={this.end}
       />
