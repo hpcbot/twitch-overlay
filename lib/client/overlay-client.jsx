@@ -33,6 +33,7 @@ class OverlayPlayer extends React.Component {
         name={overlay.name}
         type={overlay.type}
         video={overlay.video}
+        audio={overlay.audio}
         html={overlay.html}
         payload={overlay.payload}
         end={this.end}

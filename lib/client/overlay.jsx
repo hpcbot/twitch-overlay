@@ -5,6 +5,7 @@ import {render} from 'react-dom';
 import css from './overlay.css'
 
 import VideoOverlay from './types/videooverlay.jsx'
+import AudioOverlay from './types/audiooverlay.jsx'
 import HtmlOverlay from './types/htmloverlay.jsx'
 import TextOverlay from './types/textoverlay.jsx'
 
@@ -19,6 +20,9 @@ class Overlay extends React.Component {
     switch(this.props.type) {
       case 'video':
         return(<VideoOverlay onEnd={this.end} video={this.props.video} text={this.props.payload}/>);
+        break;
+      case 'audio':
+        return(<AudioOverlay onEnd={this.end} audio={this.props.payload.audio} text={this.props.payload.text} image={this.props.payload.image}/>);
         break;
       case 'html':
         return(<HtmlOverlay onEnd={this.end} html={this.props.html} />)
