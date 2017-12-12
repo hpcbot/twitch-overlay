@@ -32,6 +32,7 @@ class OverlayPlayer extends React.Component {
         id={overlay.id}
         name={overlay.name}
         type={overlay.type}
+        html={overlay.html}
         payload={overlay.payload}
         end={this.end}
       />
@@ -43,7 +44,6 @@ class OverlayPlayer extends React.Component {
 
   updateState(state) {
     this.setState(state);
-    console.log(state);
   }
 
   end(id) {

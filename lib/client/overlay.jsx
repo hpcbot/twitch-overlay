@@ -5,6 +5,7 @@ import {render} from 'react-dom';
 import css from './overlay.css'
 
 import VideoOverlay from './types/videooverlay.jsx'
+import HtmlOverlay from './types/htmloverlay.jsx'
 import TextOverlay from './types/textoverlay.jsx'
 
 class Overlay extends React.Component {
@@ -15,17 +16,15 @@ class Overlay extends React.Component {
   }
 
   render () {
-    console.log(this.props.payload);
     switch(this.props.type) {
       case 'video':
-        return(
-          <VideoOverlay onEnd={this.end} video={this.props.payload.video} />
-        );
+        return(<VideoOverlay onEnd={this.end} video={this.props.payload.video} />);
+        break;
+      case 'html':
+        return(<HtmlOverlay onEnd={this.end} html={this.props.html} />)
         break;
       case 'text':
-        return(
-          <TextOverlay onEnd={this.end} text={this.props.payload.text} />
-        );
+        return(<TextOverlay onEnd={this.end} text={this.props.payload.text} />);
       break;
     }
   }

@@ -39,6 +39,7 @@
     "pug": "2.0.0-beta11",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-html-parser": "^2.0.2",
     "shortid": "^2.2.8",
     "socket.io": "1.7.3",
     "twitch-overlay-html": "1.0.0",
