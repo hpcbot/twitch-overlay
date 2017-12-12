@@ -40,7 +40,7 @@ var overlay = {
 }
 overlays.add(overlay);
 
-events.emit('overlays:butterbeer:show');
+events.emit('overlay:butterbeer:show');
 ````
 *More info about text overlays: https://github.com/bdickason/twitch-overlay-video*
 
@@ -52,7 +52,7 @@ var overlay = {
 }
 overlays.add(overlay);
 
-events.emit('overlays:text:show', 'text to say goes here!');
+events.emit('overlay:text:show', 'text to say goes here!');
 ````
 *More info about text overlays: https://github.com/bdickason/twitch-overlay-text*
 
@@ -66,7 +66,7 @@ var overlay = {
 }
 overlays.add(overlay);
 
-events.emit('overlays:quidditch:show');
+events.emit('overlay:quidditch:show');
 ````
 *More info about text overlays: https://github.com/bdickason/twitch-overlay-html*
 
@@ -76,7 +76,7 @@ See a fully functional example here: https://github.com/bdickason/dumbledore
 
 ## Firing Overlays `show()` or `overlays:name:show`
 
-When an overlay is added to the server, it automatically has an event listener created in the format: `overlays:(name):show` where (name) is the name of the overlay that you passed in.
+When an overlay is added to the server, it automatically has an event listener created in the format: `overlay:(name):show` where (name) is the name of the overlay that you passed in.
 
 To trigger an overlay, just emit this event to the EventEmitter you passed in and the overlay will play on the server. Most overlays end automatically when they complete (i.e. video) but some such as html events do not have a fixed endpoint and listen for custom events from the client. If you have a custom event, use `io.socket.emit('endOverlay', null, (name), (payload))` where (name) is the name of your overlay and (payload) is any additional data you want to pass along. When the server retrieves this, it will relay the event to your EventEmitter in the format: `overlay:(name):end(payload)` so you can listen for this and act accordinly.
 
