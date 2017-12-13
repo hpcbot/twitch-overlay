@@ -35,9 +35,9 @@ class OverlayPlayer extends React.Component {
           <div className="col c12" width="100%"><OverlayList list={this.state.overlays.fullscreen} layout="fullscreen" end={this.end}/></div>
         </div>
         <div className="row">
-          <div className="col c3" width="100%">blah&nbsp;</div>
+          <div className="col c3" width="100%">&nbsp;</div>
           <div className="col c6" width="100%"><OverlayList list={this.state.overlays.center} layout="center" end={this.end}/>&nbsp;</div>
-          <div className="col c3" width="100%">blah&nbsp;</div>
+          <div className="col c3" width="100%">&nbsp;</div>
         </div>
       </div>
     );
