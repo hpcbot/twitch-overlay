@@ -20,3 +20,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}

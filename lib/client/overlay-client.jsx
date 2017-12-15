@@ -9,13 +9,18 @@ import openSocket from 'socket.io-client';
 const socket = openSocket(hostname + ':3000'); // Connect to the server to get client updates
 
 // Components
-import Overlay from './overlay.jsx'
+import OverlayList from './overlaylist.jsx'
 
 class OverlayPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      overlays: []
+      overlays: {
+        fullscreen: [],
+        center: [],
+        left: [],
+        right: []
+      }
     };
 
     this.updateState = this.updateState.bind(this);
@@ -26,21 +31,17 @@ class OverlayPlayer extends React.Component {
   }
 
   render () {
-    this.overlaylist = this.state.overlays.map((overlay, index) =>
-      <Overlay
-        key={overlay.id}
-        id={overlay.id}
-        name={overlay.name}
-        type={overlay.type}
-        video={overlay.video}
-        audio={overlay.audio}
-        html={overlay.html}
-        payload={overlay.payload}
-        end={this.end}
-      />
-    );
     return(
-      <div>{this.overlaylist}</div>
+      <div>
+        <div className="row">
+          <div className="col c12" width="100%"><OverlayList list={this.state.overlays.fullscreen} layout="fullscreen" end={this.end}/></div>
+        </div>
+        <div className="row">
+          <div className="col c3" width="100%"><OverlayList list={this.state.overlays.left} end={this.end}/>&nbsp;</div>
+          <div className="col c6" width="100%"><OverlayList list={this.state.overlays.center} end={this.end}/>&nbsp;</div>
+          <div className="col c3" width="100%"><OverlayList list={this.state.overlays.right} end={this.end}/>&nbsp;</div>
+        </div>
+      </div>
     );
   }
 

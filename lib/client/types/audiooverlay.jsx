@@ -11,7 +11,7 @@ class AudioOverlay extends React.Component {
     return(
       <div className="audio">
           <center>
-            <img src={this.props.image} width="400" height="600" />
+            <img src={this.props.image} width="100%"/>
             <br />
             <strong>
               <p className="text">{this.props.text}</p>
