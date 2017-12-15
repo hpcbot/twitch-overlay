@@ -42,10 +42,6 @@
     "react-html-parser": "^2.0.2",
     "shortid": "^2.2.8",
     "socket.io": "1.7.3",
-    "twitch-overlay-html": "1.1.0",
-    "twitch-overlay-text": "1.1.0",
-    "twitch-overlay-video": "1.2.0",
-    "twitch-overlay-audio": "1.2.0",
     "webpack": "^3.8.1"
   },
   "license": "GPL-3.0",
