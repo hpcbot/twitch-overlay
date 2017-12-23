@@ -19,6 +19,7 @@ class OverlayList extends React.Component {
         name={overlay.name}
         type={overlay.type}
         video={overlay.video}
+        volume={overlay.volume}
         audio={overlay.audio}
         html={overlay.html}
         payload={overlay.payload}

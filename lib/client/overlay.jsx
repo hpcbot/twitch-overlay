@@ -19,7 +19,7 @@ class Overlay extends React.Component {
   render () {
     switch(this.props.type) {
       case 'video':
-        return(<VideoOverlay onEnd={this.end} video={this.props.video} text={this.props.payload}/>);
+        return(<VideoOverlay onEnd={this.end} video={this.props.video} text={this.props.payload} volume={this.props.volume}/>);
         break;
       case 'audio':
         return(<AudioOverlay onEnd={this.end} audio={this.props.payload.audio} text={this.props.payload.text} image={this.props.payload.image}/>);
