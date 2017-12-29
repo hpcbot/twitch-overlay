@@ -16,7 +16,7 @@
     "watch": "mocha -w lib/**/*.spec.js"
   },
   "engines": {
-    "node": ">=4.4.0"
+    "node": ">=8.0.0"
   },
   "author": "bdickason",
   "contributors": [
