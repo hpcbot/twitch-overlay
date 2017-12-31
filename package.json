@@ -12,8 +12,8 @@
     "start": "node index.js",
     "build": "./node_modules/.bin/webpack",
     "dev": "./node_modules/.bin/webpack -d -w",
-    "test": "mocha lib/**/*.spec.js --exit",
-    "watch": "mocha -w lib/**/*.spec.js"
+    "test": "mocha lib/*.spec.js lib/**/*.spec.js --exit",
+    "watch": "mocha -w lib/*.spec.js lib/**/*.spec.js"
   },
   "engines": {
     "node": ">=8.0.0"
