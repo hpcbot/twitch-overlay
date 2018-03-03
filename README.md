@@ -79,6 +79,11 @@ When an overlay is added to the server, it automatically has an event listener c
 
 To trigger an overlay, just emit this event to the EventEmitter you passed in and the overlay will play on the server. Most overlays end automatically when they complete (i.e. video) but some such as html events do not have a fixed endpoint and listen for custom events from the client. If you have a custom event, use `io.socket.emit('endOverlay', null, (name), (payload))` where (name) is the name of your overlay and (payload) is any additional data you want to pass along. When the server retrieves this, it will relay the event to your EventEmitter in the format: `overlay:(name):end(payload)` so you can listen for this and act accordinly.
 
+## Hiding Overlays `hide()` or `overlays:name:hide`
+
+If you want to manually hide an overlay rather than waiting for it to complete, you can issue the hide() command.
+
+
 ## Displaying Overlays on your Stream (Adding to OBS/Xsplit)
 
 In order for overlays to display in your OBS or Xsplit client, you need to do the following:
