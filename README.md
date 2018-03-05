@@ -29,7 +29,7 @@ The `constructor()` function accepts the following optional parameters via a sin
 
 First, you should decide what type of overlay you want to display on your stream. The basic types are `text`, `video`, or `html` (see 'Modules' below for more details). The easier overlay to get started with is video which just takes a single mp4 file and a name as a parameter.
 
-## Adding Overlays `add()` or event: `overlays:add`
+## Adding Overlays `add(overlay)` or event: `overlays:add`
 
 To add an overlay, you need to pass a json object (or array of objects) with the following parameters:
 
@@ -78,6 +78,14 @@ See a fully functional example here: https://github.com/bdickason/dumbledore
 When an overlay is added to the server, it automatically has an event listener created in the format: `overlay:(name):show` where (name) is the name of the overlay that you passed in.
 
 To trigger an overlay, just emit this event to the EventEmitter you passed in and the overlay will play on the server. Most overlays end automatically when they complete (i.e. video) but some such as html events do not have a fixed endpoint and listen for custom events from the client. If you have a custom event, use `io.socket.emit('endOverlay', null, (name), (payload))` where (name) is the name of your overlay and (payload) is any additional data you want to pass along. When the server retrieves this, it will relay the event to your EventEmitter in the format: `overlay:(name):end(payload)` so you can listen for this and act accordinly.
+
+## Removing Overlays `remove(overlay)` or `overlays:name:remove`
+
+If you want to remove an existing overlay entirely, you can issue the remove() command.
+
+To add an overlay, you need to pass a json object (or array of objects) with the `name` parameter. This allows you to pass in an existing overlay object (like you would with `add()`) or create a new object that specifies the name.
+
+*Note: This does not remove the overlay from state in case one is currently playing*
 
 ## Hiding Overlays `hide()` or `overlays:name:hide`
 
